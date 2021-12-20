@@ -1,14 +1,14 @@
 version: "3"
 
 networks:
-    birdsitelivenetwork:
+    jnmmicrolivenetwork:
         external: false
 
 services:
     server:
-        image: 
+        image: jnmdev/twitterlive:latest
         restart: always
-        container_name: birdsitelive
+        container_name: jnmmicro
         environment:
             - Instance:Domain=jnmmicro.io
             - Instance:AdminEmail=j@jnm.io
