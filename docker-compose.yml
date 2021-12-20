@@ -6,21 +6,21 @@ networks:
 
 services:
     server:
-        image: nicolasconstant/birdsitelive:latest
+        image: 
         restart: always
         container_name: birdsitelive
         environment:
-            - Instance:Domain=domain.name
-            - Instance:AdminEmail=name@domain.ext
+            - Instance:Domain=jnmmicro.io
+            - Instance:AdminEmail=j@jnm.io
             - Db:Type=postgres
             - Db:Host=db
-            - Db:Name=birdsitelive
-            - Db:User=birdsitelive
-            - Db:Password=birdsitelive
-            - Twitter:ConsumerKey=twitter.api.key
-            - Twitter:ConsumerSecret=twitter.api.key
+            - Db:Name=jnmmicro
+            - Db:User=jnmmicro
+            - Db:Password=jnmmicro
+            - Twitter:ConsumerKey=VX7gB9IVIuGzpkRpvUCsMLN4u
+            - Twitter:ConsumerSecret=D4Ams5FjNlyXbDZpsl7Uh3gxo11o3lYeZnEbnYjg5ssnWHwUa7
         networks:
-            - birdsitelivenetwork
+            - jnmmicrolivenetwork
         ports:
             - "5000:80"
         depends_on:
@@ -30,10 +30,10 @@ services:
         image: postgres:9.6
         restart: always
         environment:
-            - POSTGRES_USER=birdsitelive
-            - POSTGRES_PASSWORD=birdsitelive
-            - POSTGRES_DB=birdsitelive
+            - POSTGRES_USER=jnmmicro
+            - POSTGRES_PASSWORD=jnmmicro
+            - POSTGRES_DB=jnmmicro
         networks:
-            - birdsitelivenetwork
+            - jnmmicrolivenetwork
         volumes:
             - ./postgres:/var/lib/postgresql/data
