@@ -6,7 +6,7 @@ networks:
 
 services:
     server:
-        image: jnmdev/twitterlive:main
+        image: jnmio/twitterlive:latest
         restart: always
         container_name: jnmmicro
         environment:
