@@ -1,12 +1,12 @@
 version: "3"
 
 networks:
-    jnmmicrolivenetwork:
+    jnmmicronetwork:
         external: false
 
 services:
     server:
-        image: jnmio/twitterlive:latest
+        image: jnmdev/twitterlive:latest
         restart: always
         container_name: jnmmicro
         environment:
@@ -20,7 +20,7 @@ services:
             - Twitter:ConsumerKey=VX7gB9IVIuGzpkRpvUCsMLN4u
             - Twitter:ConsumerSecret=D4Ams5FjNlyXbDZpsl7Uh3gxo11o3lYeZnEbnYjg5ssnWHwUa7
         networks:
-            - jnmmicrolivenetwork
+            - jnmmicronetwork
         ports:
             - "5000:80"
         depends_on:
@@ -34,6 +34,6 @@ services:
             - POSTGRES_PASSWORD=jnmmicro
             - POSTGRES_DB=jnmmicro
         networks:
-            - jnmmicrolivenetwork
+            - jnmmicronetwork
         volumes:
             - ./postgres:/var/lib/postgresql/data
